@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Aaron Petty - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #121212; color: #f5f5f5; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .project:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="font-sans">
+    <header class="fixed w-full top-0 bg-gray-900 flex justify-between items-center p-4 z-50">
+        <h1 class="text-xl font-bold">Aaron Petty</h1>
+        <nav>
+            <a href="#home" class="mx-2 hover:text-cyan-400">Home</a>
+            <a href="#about" class="mx-2 hover:text-cyan-400">About</a>
+            <a href="#skills" class="mx-2 hover:text-cyan-400">Skills</a>
+            <a href="#education" class="mx-2 hover:text-cyan-400">Education</a>
+            <a href="#experience" class="mx-2 hover:text-cyan-400">Experience</a>
+            <a href="#projects" class="mx-2 hover:text-cyan-400">Projects</a>
+            <a href="#contact" class="mx-2 hover:text-cyan-400">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 to-gray-800 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">Aaron Petty</h2>
+        <p class="text-xl text-gray-300">Student & Developer</p>
+        <a href="resume.pdf" download class="mt-6 px-6 py-3 bg-cyan-400 text-gray-900 font-bold rounded hover:bg-cyan-500">Download CV</a>
+    </section>
+
+    <section id="about" class="py-20 px-6 text-center bg-gray-900">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="max-w-2xl mx-auto text-gray-300">I am an aspiring IT professional passionate about system administration, virtualization, and network technologies. I enjoy solving technical challenges and continuously improving my skills.</p>
+    </section>
+
+    <section id="skills" class="py-20 px-6 bg-gray-800">
+        <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+        <ul class="max-w-xl mx-auto text-left text-gray-300 list-disc pl-6">
+            <li>Windows Server Administration</li>
+            <li>Proxmox Virtualization</li>
+            <li>Networking Fundamentals</li>
+            <li>IT Support & Troubleshooting</li>
+            <li>Python & PowerShell Scripting</li>
+        </ul>
+    </section>
+
+    <section id="education" class="py-20 px-6 text-center bg-gray-900">
+        <h2 class="text-3xl font-bold mb-4">Education</h2>
+        <p class="text-gray-300">T Level in Digital Support Services | GCSEs in Computer Science, Maths, English</p>
+    </section>
+
+    <section id="experience" class="py-20 px-6 bg-gray-800">
+        <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+        <p class="max-w-2xl mx-auto text-gray-300">Industry placement at HDANYWHERE: Assisted with IT support, hardware setup, and troubleshooting network issues.</p>
+    </section>
+
+    <section id="projects" class="py-20 px-6 bg-gray-900">
+        <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="project bg-gray-700 p-6 rounded fade-in">
+                <h3 class="text-xl font-semibold mb-2">IT Support Simulation</h3>
+                <p class="text-gray-300">Simulated helpdesk environment resolving common IT issues.</p>
+            </div>
+            <div class="project bg-gray-700 p-6 rounded fade-in">
+                <h3 class="text-xl font-semibold mb-2">Proxmox Lab</h3>
+                <p class="text-gray-300">Configured virtual machines and managed resources using Proxmox VE.</p>
+            </div>
+            <div class="project bg-gray-700 p-6 rounded fade-in">
+                <h3 class="text-xl font-semibold mb-2">Windows Server Setup</h3>
+                <p class="text-gray-300">Installed and configured Active Directory and Group Policies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 text-center bg-gray-800">
+        <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+        <p class="mb-2">Email: <a href="mailto:aaron@example.com" class="text-cyan-400">aaron@example.com</a></p>
+        <p>Phone: <span class="text-cyan-400">+44 1234 567890</span></p>
+        <p>Connect on <a href="https://linkedin.com/in/aaronpetty" class="text-cyan-400">LinkedIn</a> | <a href="https://github.com/aaronpetty" class="text-cyan-400">GitHub</a></p>
+    </section>
+
+    <footer class="text-center py-6 bg-gray-900">
+        <p>&copy; 2025 Aaron Petty. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll reveal animation
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
