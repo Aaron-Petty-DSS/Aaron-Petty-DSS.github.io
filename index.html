@@ -1,35 +1,41 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Aaron Petty - Portfolio</title>
-        <style>https://cdn.tailwindcss.com</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
         body { background-color: #121212; color: #f5f5f5; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .project:hover { transform: scale(1.05); transition: transform 0.3s ease; }
     </style>
-</head class="font-sans">
+</head>
+<body class="font-sans">
     <header class="fixed w-full top-0 bg-gray-900 flex justify-between items-center p-4 z-50">
         <h1 class="text-xl font-bold">Aaron Petty</h1>
         <nav>
-            <homeHome</a>
-            #aboutAbout</a>
-            #skillsSkills</a>
-            <a href="#education" class="mx-2    #experienceExperience</a>
-            #projectsProjects</a>
-            #contactContact</a>
+            <a href="#home" class="mx-2 hover:text-cyan-400">Home</a>
+            <a href="#about" class="mx-2 hover:text-cyan-400">About</a>
+            <a href="#skills" class="mx-2 hover:text-cyan-400">Skills</a>
+            <a href="#education" class="mx-2 hover:text-cyan-400">Education</a>
+            <a href="#experience" class="mx-2 hover:text-cyan-400">Experience</a>
+            <a href="#projects" class="mx-2 hover:text-cyan-400">Projects</a>
+            <a href="#contact" class="mx-2 hover:text-cyan-400">Contact</a>
         </nav>
     </header>
 
     <section id="home" class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 to-gray-800 text-center">
         <h2 class="text-4xl md:text-6xl font-bold mb-4">Aaron Petty</h2>
         <p class="text-xl text-gray-300">Student & Developer</p>
-        <a href="resume.pdf" download class="mt-6 px-6 py-3 bg-cyan-400 text-gray-900 font-bold rounded hover:bg-cyan
+        <a href="resume.pdf" download class="mt-6 px-6 py-3 bg-cyan-400 text-gray-900 font-bold rounded hover:bg-cyan-500">Download CV</a>
+    </section>
+
+    <section id="about" class="py-20 px-6 text-center bg-gray-900">
         <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="max-w-2xl mx-auto text-gray-300">Motivated IT student passionate about system administration, virtualization, and network technologies. I enjoy solving technical challenges and continuously improving my skills.</p>
+        <p class="max-w-2xl mx-auto text-gray-300">I am an aspiring IT professional passionate about system administration, virtualization, and network technologies. I enjoy solving technical challenges and continuously improving my skills.</p>
     </section>
 
     <section id="skills" class="py-20 px-6 bg-gray-800">
@@ -73,9 +79,9 @@
 
     <section id="contact" class="py-20 px-6 text-center bg-gray-800">
         <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-        <p class="mb-2">Email: mailto:aaronpetty2007@gmail.comaaronpetty2007@gmail.com</a></p>
-        <p>Phone: <span class="text-cyan-400">+44 7848873225</span></p>
-        <p>Connect on <a href="https://www.linkedin.com/in/aaron-petty-dss/" class="ps://github.com/Aaron-Petty-DSSGitHub</a></p>
+        <p class="mb-2">Email: <a href="mailto:aaron@example.com" class="text-cyan-400">aaron@example.com</a></p>
+        <p>Phone: <span class="text-cyan-400">+44 1234 567890</span></p>
+        <p>Connect on <a href="https://linkedin.com/in/aaronpetty" class="text-cyan-400">LinkedIn</a> | <a href="https://github.com/YOUR_GITHUB_USERNAME" class="text-cyan-400">GitHub</a></p>
     </section>
 
     <footer class="text-center py-6 bg-gray-900">
@@ -83,6 +89,7 @@
     </footer>
 
     <script>
+        // Smooth scrolling
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -90,6 +97,7 @@
             });
         });
 
+        // Scroll reveal animation
         const fadeEls = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -103,8 +111,3 @@
     </script>
 </body>
 </html>
-``---
-
-
-
-
